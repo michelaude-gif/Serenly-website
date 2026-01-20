@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenly - La vie de famille simplifiée</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #6366f1; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #6366f1; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6rem 2rem; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .tagline { font-size: 1.3rem; opacity: 0.95; }
+        .about { padding: 4rem 2rem; background: #f8f9fa; }
+        .about h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #6366f1; text-align: center; }
+        .about p { font-size: 1.1rem; max-width: 800px; margin: 1rem auto; text-align: center; }
+        .features { padding: 4rem 2rem; }
+        .features h2 { font-size: 2.5rem; margin-bottom: 3rem; color: #6366f1; text-align: center; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .feature-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .icon { font-size: 3rem; margin-bottom: 1rem; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #333; }
+        .feature-card p { color: #666; }
+        .cta { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .cta h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .privacy { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+        .privacy h1 { font-size: 2.5rem; color: #6366f1; margin-bottom: 2rem; }
+        .privacy h2 { font-size: 1.8rem; color: #333; margin-top: 2rem; margin-bottom: 1rem; }
+        .privacy p, .privacy li { margin-bottom: 1rem; line-height: 1.8; }
+        .privacy ul { margin-left: 2rem; }
+        .contact { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+        .contact h1 { font-size: 2.5rem; color: #6366f1; margin-bottom: 2rem; text-align: center; }
+        .contact-info { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .contact-info p { margin-bottom: 1rem; font-size: 1.1rem; }
+        footer { background: #2d3748; color: white; padding: 2rem; text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1rem; }
+        .footer-links a { color: white; text-decoration: none; }
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { gap: 1rem; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Serenly</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Accueil</a></li>
+                <li><a href="#" onclick="showPage('privacy')">Confidentialité</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="home" class="page-section active">
+        <section class="hero">
+            <div class="container">
+                <h1>Simplifiez votre vie de famille</h1>
+                <p class="tagline">Une plateforme d'applications pour accompagner votre quotidien familial</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2>À propos de Serenly</h2>
+                <p>Serenly est une plateforme innovante qui propose une suite d'applications mobiles conçues pour faciliter le quotidien des familles modernes.</p>
+                <p>Notre mission est de vous offrir des outils simples et intuitifs pour mieux gérer votre temps et vos activités familiales.</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Nos services</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">📅</div>
+                        <h3>Gestion d'agenda</h3>
+                        <p>Organisez les activités de toute la famille en un seul endroit</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">⏰</div>
+                        <h3>Gestion du temps</h3>
+                        <p>Planifiez et optimisez votre temps au quotidien</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🍽️</div>
+                        <h3>Aide aux menus</h3>
+                        <p>Des idées de repas adaptées à vos besoins</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🛒</div>
+                        <h3>Gestion des courses</h3>
+                        <p>Simplifiez vos listes de courses et vos achats</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Prochainement disponible</h2>
+                <p>Nos applications seront bientôt disponibles sur Google Play Store</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="privacy" class="page-section">
+        <section class="privacy">
+            <div class="container">
+                <h1>Politique de confidentialité</h1>
+                <p><strong>Dernière mise à jour : janvier 2025</strong></p>
+
+                <h2>1. Introduction</h2>
+                <p>Serenly s'engage à protéger la confidentialité de ses utilisateurs. Cette politique décrit comment nous collectons, utilisons et protégeons vos informations personnelles.</p>
+
+                <h2>2. Données collectées</h2>
+                <p>Nous pouvons collecter :</p>
+                <ul>
+                    <li>Informations de compte : nom, adresse e-mail</li>
+                    <li>Données d'utilisation de l'application</li>
+                    <li>Informations techniques : type d'appareil, système d'exploitation</li>
+                </ul>
+
+                <h2>3. Utilisation des données</h2>
+                <p>Les données sont utilisées pour :</p>
+                <ul>
+                    <li>Fournir et améliorer nos services</li>
+                    <li>Personnaliser votre expérience</li>
+                    <li>Assurer la sécurité</li>
+                </ul>
+
+                <h2>4. Partage des données</h2>
+                <p>Nous ne vendons pas vos données personnelles. Nous pouvons partager vos informations uniquement avec votre consentement ou pour des obligations légales.</p>
+
+                <h2>5. Vos droits</h2>
+                <p>Conformément au RGPD, vous disposez des droits d'accès, de rectification et d'effacement de vos données.</p>
+
+                <h2>6. Contact</h2>
+                <p>Pour toute question, consultez notre page Contact.</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="contact" class="page-section">
+        <section class="contact">
+            <div class="container">
+                <h1>Contactez-nous</h1>
+                <div class="contact-info">
+                    <p><strong>Serenly</strong></p>
+                    <p>Pour toute question concernant nos applications ou notre politique de confidentialité :</p>
+                    <p><strong>Email :</strong> contact@serenly.fr</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Serenly. Tous droits réservés.</p>
+            <ul class="footer-links">
+                <li><a href="#" onclick="showPage('privacy')">Politique de confidentialité</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageName) {
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageName).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
