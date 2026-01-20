@@ -10,12 +10,15 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
         nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .logo { font-size: 1.8rem; font-weight: bold; color: #6366f1; }
+        .logo { height: 50px; }
+        .logo img { height: 100%; width: auto; }
         .nav-links { display: flex; list-style: none; gap: 2rem; }
         .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #6366f1; }
         .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6rem 2rem; text-align: center; }
         .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero .logo-hero { height: 120px; margin-bottom: 2rem; }
+        .hero .logo-hero img { height: 100%; width: auto; filter: brightness(0) invert(1); }
         .tagline { font-size: 1.3rem; opacity: 0.95; }
         .about { padding: 4rem 2rem; background: #f8f9fa; }
         .about h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #6366f1; text-align: center; }
@@ -48,13 +51,17 @@
             .hero h1 { font-size: 2rem; }
             .nav-links { gap: 1rem; }
             .features-grid { grid-template-columns: 1fr; }
+            .logo { height: 40px; }
+            .hero .logo-hero { height: 80px; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Serenly</div>
+            <div class="logo">
+                <img src="logo.png" alt="Serenly">
+            </div>
             <ul class="nav-links">
                 <li><a href="#" onclick="showPage('home')">Accueil</a></li>
                 <li><a href="#" onclick="showPage('privacy')">Confidentialité</a></li>
@@ -66,6 +73,9 @@
     <div id="home" class="page-section active">
         <section class="hero">
             <div class="container">
+                <div class="logo-hero">
+                    <img src="logo.png" alt="Serenly">
+                </div>
                 <h1>Simplifiez votre vie de famille</h1>
                 <p class="tagline">Une plateforme d'applications pour accompagner votre quotidien familial</p>
             </div>
@@ -159,7 +169,7 @@
                 <div class="contact-info">
                     <p><strong>Serenly</strong></p>
                     <p>Pour toute question concernant nos applications ou notre politique de confidentialité :</p>
-                    <p><strong>Email :</strong> contact@serenly.fr</p>
+                    <p><strong>Email :</strong> serenly@gmail.com</p>
                 </div>
             </div>
         </section>
